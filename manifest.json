@@ -1,0 +1,27 @@
+{
+  "name" : "Informatica Cloud Enhancer",
+  "version" : "1.0",
+  "description" : "Enhances the Informatica Cloud User Interface",
+  "background_page" : "background.html",
+  "page_action" :
+  {
+    "default_icon" : "icon-19.png",
+    "default_title" : "Informatica Cloud Enhancer"
+  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://*.informaticaondemand.com/*",
+        "https://*.informaticaondemand.com/*"
+      ],
+      "js" : ["sh_main.js", "sh_sql.min.js", "jquery-1.7.min.js", "contentscript.js"],
+      "css": ["sh_style.css"],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+  ],
+  "icons" : {
+    "48" : "icon-48.png",
+    "128" : "icon-128.png"
+  }
+}
